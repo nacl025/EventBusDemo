@@ -6,10 +6,23 @@
     android:padding="16dp"
     tools:context="com.github.cyc.eventbus.subscriberindexdemo.SecondActivity">
 
-    <Button
-        android:id="@+id/btn_second_post_event"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="@string/post_event" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_second_post_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/post_event"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_second_post_event2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Button" />
+    </LinearLayout>
 </FrameLayout>

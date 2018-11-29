@@ -24,6 +24,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
 
     private void initContentView() {
         findViewById(R.id.btn_second_post_event).setOnClickListener(this);
+        findViewById(R.id.btn_second_post_event2).setOnClickListener(this);
     }
 
     @Override
@@ -31,6 +32,9 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         if (v.getId() == R.id.btn_second_post_event) {
             // 发布事件
             EventBus.getDefault().post(new MessageEvent("Hello EventBus!"));
+        }
+        if(v.getId() == R.id.btn_second_post_event2){
+            EventBus.getDefault().post(new Message2Event("Hello Thirdly!"));
         }
     }
 }

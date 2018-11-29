@@ -14,7 +14,7 @@ import org.greenrobot.eventbus.ThreadMode;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
 
-    private TextView mTvMessage;
+    private TextView mTvMessage, mTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initContentView() {
         Button btnStart = findViewById(R.id.btn_main_start_activity);
         mTvMessage = findViewById(R.id.tv_main_message);
+        mTV = findViewById(R.id.textView2);
         btnStart.setOnClickListener(this);
     }
 
@@ -44,6 +45,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // 更新界面
         mTvMessage.setText(event.getMessage());
     }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onMessageEvent(Message2Event event){
+        Log.i(TAG, "message2 is " + event.getMessage());
+        mTV.setText(event.getMessage());
+    }
+
 
     @Override
     protected void onDestroy() {
